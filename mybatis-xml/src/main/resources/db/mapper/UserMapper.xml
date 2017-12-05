@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunp.mybatisxml.dao.UserDao" >
+    <resultMap id="BaseResultMap" type="com.sunp.mybatisxml.bean.UserInfo" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="pwd" property="pwd" jdbcType="VARCHAR" />
+        <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+        <result column="update_date" property="updateDate" jdbcType="TIMESTAMP" />
+        <result column="deleted" property="deleted" jdbcType="INTEGER" />
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        id, name, phone, pwd, create_date,update_date,deleted
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap"  >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM user
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Integer" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List" />
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.sunp.mybatisxml.bean.UserInfo" >
+        INSERT INTO
+        user
+        (name,phone,pwd)
+        VALUES
+        (#{name}, #{phone}, #{pwd})
+    </insert>
+
+    <update id="update" parameterType="com.sunp.mybatisxml.bean.UserInfo" >
+        UPDATE
+        user
+        SET
+        <if test="name != null">name = #{name},</if>
+        <if test="phone != null">phone = #{phone},</if>
+        pwd = #{pwd}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer" >
+        DELETE FROM
+        user
+        WHERE
+        id =#{id}
+    </delete>
+
+</mapper>
