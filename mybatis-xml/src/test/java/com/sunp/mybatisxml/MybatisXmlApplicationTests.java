@@ -1,5 +1,6 @@
 package com.sunp.mybatisxml;
 
+import com.github.pagehelper.PageHelper;
 import com.sunp.mybatisxml.bean.UserInfo;
 import com.sunp.mybatisxml.dao.UserDao;
 import org.junit.Test;
@@ -19,8 +20,12 @@ public class MybatisXmlApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		//https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md
+		PageHelper.startPage(1,2);
 		List<UserInfo> all = userDao.getAll();
 		System.out.println(all);
+
+
 	}
 
 }
