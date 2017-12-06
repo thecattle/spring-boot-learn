@@ -1,4 +1,4 @@
-package com.sunp.mybaits.bean;
+package com.sunp.mybatisanno.bean;
 
 import java.util.Date;
 

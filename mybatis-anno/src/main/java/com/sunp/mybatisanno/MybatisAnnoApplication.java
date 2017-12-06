@@ -1,12 +1,12 @@
-package com.sunp.mybaits;
+package com.sunp.mybatisanno;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MybaitsApplication {
+public class MybatisAnnoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MybaitsApplication.class, args);
+		SpringApplication.run(MybatisAnnoApplication.class, args);
 	}
 }

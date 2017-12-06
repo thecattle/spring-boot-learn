@@ -24,8 +24,6 @@ public class MybatisXmlApplicationTests {
 		PageHelper.startPage(1,2);
 		List<UserInfo> all = userDao.getAll();
 		System.out.println(all);
-
-
 	}
 
 }

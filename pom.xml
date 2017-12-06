@@ -14,5 +14,7 @@
         <module>hello</module>
         <module>spring-boot-starter-hello</module>
         <module>swagger</module>
+        <module>mybatis-anno</module>
+        <module>mybatis-xml</module>
     </modules>
 </project>
