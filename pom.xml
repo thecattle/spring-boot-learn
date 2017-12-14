@@ -16,5 +16,7 @@
         <module>swagger</module>
         <module>mybatis-anno</module>
         <module>mybatis-xml</module>
+        <module>redis</module>
+        <module>thymeleaf</module>
     </modules>
 </project>
